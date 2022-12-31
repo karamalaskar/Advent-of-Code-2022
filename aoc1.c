@@ -6,8 +6,10 @@ int main(void)
 {
 
     FILE *f = fopen("aoc1.txt", "r");
+    if (f == NULL)
+        return 1;
 
-    char line[10];
+    char *line = malloc(10);
 
     int elf_count = 0;
 
@@ -22,10 +24,12 @@ int main(void)
     for (int i = 0; i < elf_count; i++)
         elves[i] = 0;
 
-    int calories;
+    int calories = 0;
     int elf = 0;
 
     f = fopen("aoc1.txt", "r");
+    if (f == NULL)
+        return 1;
 
     while (fgets(line, sizeof(line), f))
     {
@@ -46,5 +50,6 @@ int main(void)
 
     printf("Elf #%i is carrying the most calories (%i).\n", max + 1, elves[max]);
 
+    free(line);
     fclose(f);
 }
