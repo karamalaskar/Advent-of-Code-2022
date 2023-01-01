@@ -1,5 +1,5 @@
-
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(void)
 {
@@ -31,7 +31,7 @@ int main(void)
     // AY 2 + 6     BY 2 + 3    CY 2 + 0
     // AZ 3 + 0     BZ 3 + 6    CZ 3 + 3
 
-    for (int i = 0; i <= 2500; i++)
+    for (int i = 0; i < 2500; i++)
     {
         if (opponent_move[i] == 'A')
         {
@@ -62,4 +62,5 @@ int main(void)
         }
     }
     printf("%i\n", my_points);
+    fclose(f);
 }
